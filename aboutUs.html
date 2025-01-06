@@ -92,15 +92,12 @@
             <div class="form-container">
                 <h2>Formularz Oceny Biblioteki</h2>
                
-                    <label for="rating">Oceń bibliotekę (1-5):</label>
-                    <select id="rating" name="rating" required>
-                        <option value="">Wybierz ocenę</option>
-                        <option value="1">1 - Bardzo źle</option>
-                        <option value="2">2 - Źle</option>
-                        <option value="3">3 - Przeciętnie</option>
-                        <option value="4">4 - Dobrze</option>
-                        <option value="5">5 - Bardzo dobrze</option>
-                    </select>
+                    <label for="rating">Oceń bibliotekę:</label>
+                    <label><input type="radio" name="rating" value="1" required> 1</label>
+                    <label><input type="radio" name="rating" value="2"> 2</label>
+                    <label><input type="radio" name="rating" value="3"> 3</label>
+                    <label><input type="radio" name="rating" value="4"> 4</label>
+                    <label><input type="radio" name="rating" value="5"> 5</label>
         
                     <label for="comments">Uwagi i sugestie:</label>
                     <textarea id="comments" name="comments" rows="5" placeholder="Napisz swoje uwagi lub sugestie..." required></textarea>
