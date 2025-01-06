@@ -1,0 +1,9 @@
+nav {
+    text-decoration: none;
+    color: black;
+    width: 150px;
+    min-height: 50px;
+    height: auto;
+    margin-right: 30px;
+    padding: 0;
+}
