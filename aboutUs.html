@@ -89,6 +89,35 @@
                     REGON 00000-1525
                 </address>
             </section>
+            <div class="form-container">
+                <h2>Formularz Oceny Biblioteki</h2>
+               
+                    <label for="rating">Oceń bibliotekę (1-5):</label>
+                    <select id="rating" name="rating" required>
+                        <option value="">Wybierz ocenę</option>
+                        <option value="1">1 - Bardzo źle</option>
+                        <option value="2">2 - Źle</option>
+                        <option value="3">3 - Przeciętnie</option>
+                        <option value="4">4 - Dobrze</option>
+                        <option value="5">5 - Bardzo dobrze</option>
+                    </select>
+        
+                    <label for="comments">Uwagi i sugestie:</label>
+                    <textarea id="comments" name="comments" rows="5" placeholder="Napisz swoje uwagi lub sugestie..." required></textarea>
+        
+                    <h3>Formularz Kontaktowy</h3>
+                    <label for="name">Imię i nazwisko:</label>
+                    <input type="text" id="name" name="name" placeholder="Twoje imię i nazwisko" required>
+        
+                    <label for="email">Adres e-mail:</label>
+                    <input type="email" id="email" name="email" placeholder="Twój adres e-mail" required>
+        
+                    <label for="question">Twoje pytanie:</label>
+                    <textarea id="question" name="question" rows="5" placeholder="Zadaj pytanie..." required></textarea>
+        
+                    <button type="submit">Wyślij</button>
+                </form>
+            </div>
 
         </body>
 
