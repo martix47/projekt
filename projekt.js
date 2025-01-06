@@ -17,4 +17,10 @@ loginForm.addEventListener('submit', function(event) {
         // Wyświetl błąd
         errorMessage.style.display = "block";
     }
+    // Jeśli zaznaczono "Zapamiętaj mnie", zapisz dane do localStorage
+    if (rememberMe.checked) {
+        localStorage.setItem('username', username);
+    } else {
+        localStorage.removeItem('username');
+    }
 });
