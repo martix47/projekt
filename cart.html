@@ -27,6 +27,53 @@
                     </ul>
                 </nav>
             </header>
+            <div class="thank-you">Dziękujemy za zaufanie i korzystanie z naszej biblioteki!</div>
+            <table id="cartTable">
+                <thead>
+                    <tr>
+                        <th>Tytuł Książki</th>
+                        <th>Cena</th>
+                        <th>Usuń</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Dynamicznie generowane w JavaScript -->
+                </tbody>
+            </table>
+            <div class="summary">Łączna kwota: <span id="totalPrice">0 zł</span></div>
+            <div class="footer">&copy; 2025 Twoja Biblioteka Online. Wszelkie prawa zastrzeżone.</div>
+        
+            <script>
+                const cart = JSON.parse(localStorage.getItem('cart')) || [];
+                const cartTableBody = document.querySelector('#cartTable tbody');
+                const totalPriceElement = document.getElementById('totalPrice');
+        
+                function renderCart() {
+                    cartTableBody.innerHTML = '';
+                    let totalPrice = 0;
+        
+                    cart.forEach((item, index) => {
+                        const row = document.createElement('tr');
+                        row.innerHTML = `
+                            <td>${item.title}</td>
+                            <td>1 zł</td>
+                            <td><button onclick="removeFromCart(${index})">Usuń</button></td>
+                        `;
+                        cartTableBody.appendChild(row);
+                        totalPrice += 1; // Cena każdej książki to 1 zł
+                    });
+        
+                    totalPriceElement.textContent = `${totalPrice} zł`;
+                }
+        
+                function removeFromCart(index) {
+                    cart.splice(index, 1);
+                    localStorage.setItem('cart', JSON.stringify(cart));
+                    renderCart();
+                }
+        
+                renderCart();
+            </script>
             <footer>
                 @  MA & IZ KTI
             </footer>

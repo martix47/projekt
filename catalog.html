@@ -27,31 +27,135 @@
             </header>
 
             <section>
-                <h3>Przeglad ksiazek - pazdziernik 2024</h3>
-                    <table border="1px" style="text-align: center;">
-                        <tr>
-                            <th>X</th>
-                            <th>Y</th>
-                            <th>Z</th>
-                        </tr>
-                        <tr>
-                            <td><a href=""><img src=""></a></td>
-                            <td><a href=""><img src=""></a></td>
-                            <td><a href=""><img src=""></a></td>
-                        </tr>
-                        <tr>
-                            <td><a href=""><img src=""></a></td>
-                            <td><a href=""><img src=""></a></td>
-                            <td><a href=""><img src=""></a></td>
-    
-                        </tr>
-                        <tr>
-                            <td><a href=""><img src=""></a></td>
-                            <td><a href=""><img src=""></a></td>
-                            <td><a href=""><img src=""></a></td>
-                        </tr>
-                    </table>
+                <h3>Katalog Książek</h3>
+                <table>
+                    <tr>
+                        <th>Książka 1</th>
+                        <th>Książka 2</th>
+                        <th>Książka 3</th>
+                        <th>Książka 4</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <figure>
+                                <img src="book1.jpg" alt="Książka 1">
+                                <figcaption>Opis Książki 1</figcaption>
+                            </figure>
+                            <button onclick="addToCart('Książka 1')">Dodaj do koszyka</button>
+                        </td>
+                        <td>
+                            <figure>
+                                <img src="book2.jpg" alt="Książka 2">
+                                <figcaption>Opis Książki 2</figcaption>
+                            </figure>
+                            <button onclick="addToCart('Książka 2')">Dodaj do koszyka</button>
+                        </td>
+                        <td>
+                            <figure>
+                                <img src="book3.jpg" alt="Książka 3">
+                                <figcaption>Opis Książki 3</figcaption>
+                            </figure>
+                            <button onclick="addToCart('Książka 3')">Dodaj do koszyka</button>
+                        </td>
+                        <td>
+                            <figure>
+                                <img src="book4.jpg" alt="Książka 4">
+                                <figcaption>Opis Książki 4</figcaption>
+                            </figure>
+                            <button onclick="addToCart('Książka 4')">Dodaj do koszyka</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Książka 5</th>
+                        <th>Książka 6</th>
+                        <th>Książka 7</th>
+                        <th>Książka 8</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <figure>
+                                <img src="book5.jpg" alt="Książka 5">
+                                <figcaption>Opis Książki 5</figcaption>
+                            </figure>
+                            <button onclick="addToCart('Książka 5')">Dodaj do koszyka</button>
+                        </td>
+                        <td>
+                            <figure>
+                                <img src="book6.jpg" alt="Książka 6">
+                                <figcaption>Opis Książki 6</figcaption>
+                            </figure>
+                            <button onclick="addToCart('Książka 6')">Dodaj do koszyka</button>
+                        </td>
+                        <td>
+                            <figure>
+                                <img src="book7.jpg" alt="Książka 7">
+                                <figcaption>Opis Książki 7</figcaption>
+                            </figure>
+                            <button onclick="addToCart('Książka 7')">Dodaj do koszyka</button>
+                        </td>
+                        <td>
+                            <figure>
+                                <img src="book8.jpg" alt="Książka 8">
+                                <figcaption>Opis Książki 8</figcaption>
+                            </figure>
+                            <button onclick="addToCart('Książka 8')">Dodaj do koszyka</button>
+                        </td>
+                    </tr>
+                    <!-- Add more rows following the same structure -->
+                    <tr>
+                        <th>Książka 9</th>
+                        <th>Książka 10</th>
+                        <th>Książka 11</th>
+                        <th>Książka 12</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <figure>
+                                <img src="book9.jpg" alt="Książka 9">
+                                <figcaption>Opis Książki 9</figcaption>
+                            </figure>
+                            <button onclick="addToCart('Książka 9')">Dodaj do koszyka</button>
+                        </td>
+                        <td>
+                            <figure>
+                                <img src="book10.jpg" alt="Książka 10">
+                                <figcaption>Opis Książki 10</figcaption>
+                            </figure>
+                            <button onclick="addToCart('Książka 10')">Dodaj do koszyka</button>
+                        </td>
+                        <td>
+                            <figure>
+                                <img src="book11.jpg" alt="Książka 11">
+                                <figcaption>Opis Książki 11</figcaption>
+                            </figure>
+                            <button onclick="addToCart('Książka 11')">Dodaj do koszyka</button>
+                        </td>
+                        <td>
+                            <figure>
+                                <img src="book12.jpg" alt="Książka 12">
+                                <figcaption>Opis Książki 12</figcaption>
+                            </figure>
+                            <button onclick="addToCart('Książka 12')">Dodaj do koszyka</button>
+                        </td>
+                    </tr>
+                    <!-- Continue with similar blocks until you reach 40 books -->
+                </table>
             </section>
+        
+            <script>
+                function addToCart(bookTitle) {
+                    // Pobranie istniejącego koszyka z localStorage
+                    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+        
+                    // Dodanie książki do koszyka
+                    cart.push({ title: bookTitle });
+        
+                    // Zapisanie koszyka w localStorage
+                    localStorage.setItem('cart', JSON.stringify(cart));
+        
+                    alert(`${bookTitle} została dodana do koszyka!`);
+                }
+            </script>
 
 
             <footer>
