@@ -1,4 +1,5 @@
 // logowanie
+console.log("Plik login.js został załadowany!");
 const validUsername = "admin";
 const validPassword = "password123";
 
