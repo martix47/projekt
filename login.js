@@ -24,10 +24,11 @@ loginForm.addEventListener('submit', function(event) {
         localStorage.removeItem('username');
     }     
 
-    
+    console.log("Zalogowano! Przekierowanie na index.html");
     window.location.href = "index.html";
     } else {
     
     errorMessage.style.display = "block";
+    console.log("Błąd logowania: nieprawidłowe dane");
 }
 });
