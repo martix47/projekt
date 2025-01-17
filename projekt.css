@@ -522,3 +522,36 @@ body {
   .form-container button:hover {
       background-color: #52051f;
   }
+  /* sekcja z ksiazkkowymi wydarzeniami - zeby sie wysuwala */
+  #sidePanel {
+    position: fixed;
+    top: 0;
+    right: -300px;  
+    width: 300px;
+    height: 100%;
+    background-color: #f4e1d2;
+    padding: 20px;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.3);
+    transition: right 0.3s ease;
+    z-index: 1000;
+}
+
+
+#toggleAside:checked ~ #sidePanel {
+    right: 0;
+}
+
+
+#toggleButton {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1100;
+    padding: 10px 15px;
+    background-color: #6e072d;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    
+}
+
