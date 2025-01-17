@@ -7,13 +7,16 @@ body {
       
   
   /* Styl dla nawigacji */
-  nav {
-    position: fixed;
-    top: 0;
+  nav{
+    position: fixed; /* Pasek przyklejony do widoku */
+    top: 0; /* Ustawienie na samej górze */
     left: 0;
-    width: 100%;
-    z-index: 1000;
+    width: 100%; /* Rozciągnięcie na całą szerokość strony */
+    padding: 10px 20px; /* Marginesy wewnętrzne */
+    z-index: 1000; /* Zapewnienie, że pasek jest nad innymi elementami */
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5); /* Dodanie cienia */
   }
+
   nav ul {
       list-style: none; 
       margin: 0;
