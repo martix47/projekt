@@ -8,13 +8,13 @@ body {
   
   /* Styl dla nawigacji */
   nav{
-    position: fixed; /* Pasek przyklejony do widoku */
-    top: 0; /* Ustawienie na samej górze */
+    position: fixed;
+    top: 0; 
     left: 0;
-    width: 100%; /* Rozciągnięcie na całą szerokość strony */
-    padding: 10px 20px; /* Marginesy wewnętrzne */
-    z-index: 1000; /* Zapewnienie, że pasek jest nad innymi elementami */
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5); /* Dodanie cienia */
+    width: 100%; 
+    padding: 10px 20px; 
+    z-index: 1000; 
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5); 
   }
 
   nav ul {
@@ -49,6 +49,8 @@ body {
   }
   
   .banner {
+      display: block;
+      height: auto;
       width: 100%; 
       height: 300px; 
       background-image: url("images/book.jpg");
