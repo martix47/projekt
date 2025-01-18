@@ -1,38 +1,36 @@
 <!DOCTYPE html>
-    <html>
-        <head>
-            <title>Koszyk</title>
-            <link rel="icon" href="images/favicon.ico">
-            <link rel="stylesheet" href="projekt.css">
-            <script src="lverify.js"></script>
-        </head>
+<html>
+    <head>
+        <title>Koszyk</title>
+        <link rel="icon" href="images/favicon.ico">
+        <link rel="stylesheet" href="projekt.css">
+        <script src="lverify.js"></script>
+    </head>
 
-        <body>
-            
-            
-            <header>
-                <nav>
-                    <ul>
-                        <li>
-                            <a href="index.html">Biblioteka</a>
-                        </li>
-                        <li>
-                            <a href="catalog.html">Katalog</a>
-                        </li>
-                        <li>
-                            <a href="cart.html">Koszyk</a>
-                        </li>
-                        <li>
-                            <a href="aboutUs.html">O nas</a>
-                        </li>
-                    </ul>
-                </nav>
-                
-            </header>
-            <section id="catalog">
-                <h3>Twój Koszyk</h3>
-                <p>Dziękujemy za zaufanie!</p>
-            
+    <body>
+        <header>
+            <nav>
+                <ul>
+                    <li>
+                        <a href="index.html">Biblioteka</a>
+                    </li>
+                    <li>
+                        <a href="catalog.html">Katalog</a>
+                    </li>
+                    <li>
+                        <a href="cart.html">Koszyk</a>
+                    </li>
+                    <li>
+                        <a href="aboutUs.html">O nas</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+
+        <section id="catalog">
+            <h3>Twój Koszyk</h3>
+            <p>Dziękujemy za zaufanie!</p>
+
             <table id="cartTable">
                 <thead>
                     <tr>
@@ -41,55 +39,60 @@
                         <th>Usuń</th>
                     </tr>
                 </thead>
-            
+
                 <tbody>
-                    
                 </tbody>
             </table>
-            <div class="summary">Łączna kwota: <span id="totalPrice">0 zł</span>
-                <p>Opłata manipulacyjna: <span id="handlingFee">1 zł</span></p>
+
+            <div class="summary">
+                Łączna kwota: <span id="totalPrice">0 zł</span>
+                <p>Opłata manipulacyjna: <span id="handlingFee">1 zł od książki</span></p>
             </div>
+
             <div class="orderConfirmation">
-                <button onclick="orderconfirmation.html">Wypożycz książki</button>
+                <button onclick="redirectToCheckout()">Wypożycz książki</button>
             </div>
         </section>
-            
-            <script>
-                const cart = JSON.parse(localStorage.getItem('cart')) || [];
-                const cartTableBody = document.querySelector('#cartTable tbody');
-                const totalPriceElement = document.getElementById('totalPrice');
-                const handlingFee = 1; // Opłata manipulacyjna 1 zł
-        
-                function renderCart() {
-                    cartTableBody.innerHTML = '';
-                    let totalPrice = 0;
-        
-                    cart.forEach((item, index) => {
-                        const row = document.createElement('tr');
-                        row.innerHTML = `
-                            <td>${item.title}</td>
-                            <td>1 zł</td>
-                            <td><button onclick="removeFromCart(${index})">Usuń</button></td>
-                        `;
-                        cartTableBody.appendChild(row);
-                        totalPrice += 1; // Cena każdej książki to 1 zł
-                    });
 
-                    totalPrice += handlingFee; // Dodanie opłaty manipulacyjnej
-                    totalPriceElement.textContent = `${totalPrice} zł`;
-                }
-        
-                function removeFromCart(index) {
-                    cart.splice(index, 1);
-                    localStorage.setItem('cart', JSON.stringify(cart));
-                    renderCart();
-                }
-        
+        <script>
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const cartTableBody = document.querySelector('#cartTable tbody');
+            const totalPriceElement = document.getElementById('totalPrice');
+            const handlingFeePerBook = 1; // Opłata manipulacyjna 1 zł od książki
+
+            function renderCart() {
+                cartTableBody.innerHTML = '';
+                let totalPrice = 0;
+
+                cart.forEach((item, index) => {
+                    const row = document.createElement('tr');
+                    row.innerHTML = `
+                        <td>${item.title}</td>
+                        <td>1 zł</td>
+                        <td><button onclick="removeFromCart(${index})">Usuń</button></td>
+                    `;
+                    cartTableBody.appendChild(row);
+                    totalPrice += 1 + handlingFeePerBook; // Cena książki + opłata manipulacyjna
+                });
+
+                totalPriceElement.textContent = `${totalPrice} zł`;
+            }
+
+            function removeFromCart(index) {
+                cart.splice(index, 1);
+                localStorage.setItem('cart', JSON.stringify(cart));
                 renderCart();
-            </script>
-            <footer>
-                @  MA & IZ KTI
-            </footer>
-        </body>
-        
-    </html>
+            }
+
+            function redirectToCheckout() {
+                window.location.href = "orderconfirmation.html"; // Przekierowanie na stronę "checkout.html"
+            }
+
+            renderCart();
+        </script>
+
+        <footer>
+            @ MA & IZ KTI
+        </footer>
+    </body>
+</html>
