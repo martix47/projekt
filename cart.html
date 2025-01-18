@@ -46,13 +46,19 @@
                     
                 </tbody>
             </table>
-            <div class="summary">Łączna kwota: <span id="totalPrice">0 zł</span></div>
+            <div class="summary">Łączna kwota: <span id="totalPrice">0 zł</span>
+                <p>Opłata manipulacyjna: <span id="handlingFee">1 zł</span></p>
+            </div>
+            <div class="orderConfirmation">
+                <button onclick="orderconfirmation.html">Wypożycz książki</button>
+            </div>
         </section>
             
             <script>
                 const cart = JSON.parse(localStorage.getItem('cart')) || [];
                 const cartTableBody = document.querySelector('#cartTable tbody');
                 const totalPriceElement = document.getElementById('totalPrice');
+                const handlingFee = 1; // Opłata manipulacyjna 1 zł
         
                 function renderCart() {
                     cartTableBody.innerHTML = '';
@@ -68,7 +74,8 @@
                         cartTableBody.appendChild(row);
                         totalPrice += 1; // Cena każdej książki to 1 zł
                     });
-        
+
+                    totalPrice += handlingFee; // Dodanie opłaty manipulacyjnej
                     totalPriceElement.textContent = `${totalPrice} zł`;
                 }
         
