@@ -564,10 +564,10 @@ body {
 /* sekcja css dla orderconfirmation */
 #checkout {
     margin-top: 50px;
-    padding: 
+    padding: 10px
 }
 
-#checkout h3 {
+#h3order {
     color: #6e072d;
     font-size: 24px;
 }
