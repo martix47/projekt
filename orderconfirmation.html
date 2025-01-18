@@ -49,6 +49,7 @@
             const cart = JSON.parse(localStorage.getItem('cart')) || [];
             const checkoutTableBody = document.querySelector('#checkoutTable tbody');
             const orderTotalElement = document.getElementById('orderTotal');
+            const handlingFeePerBook = 1;
 
             function renderCheckout() {
                 checkoutTableBody.innerHTML = '';
@@ -60,12 +61,12 @@
                         <td>${item.title}</td>
                     `;
                     checkoutTableBody.appendChild(row);
-                    totalPrice += 1; // Cena każdej książki to 1 zł
+                    totalPrice += 1 + handlingFeePerBook;; // Cena każdej książki to 1 zł
                 });
 
                 orderTotalElement.textContent = `Wartość zamówienia wyniosła: ${totalPrice} zł. Proszę uregulować należność przy odbiorze książek z biblioteki`;
 
-                // Clear the cart after rendering checkout page
+                // Oczyszczanie koszyka po wejsciu na strone potwierdzenie zamowienia
                 localStorage.removeItem('cart');
             }
 
