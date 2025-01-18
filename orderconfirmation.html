@@ -41,14 +41,18 @@
                 <tbody>
                 </tbody>
             </table>
+
+            <p id="orderTotal"></p>
         </section>
 
         <script>
             const cart = JSON.parse(localStorage.getItem('cart')) || [];
             const checkoutTableBody = document.querySelector('#checkoutTable tbody');
+            const orderTotalElement = document.getElementById('orderTotal');
 
             function renderCheckout() {
                 checkoutTableBody.innerHTML = '';
+                let totalPrice = 0;
 
                 cart.forEach((item) => {
                     const row = document.createElement('tr');
@@ -56,7 +60,10 @@
                         <td>${item.title}</td>
                     `;
                     checkoutTableBody.appendChild(row);
+                    totalPrice += 1; // Cena każdej książki to 1 zł
                 });
+
+                orderTotalElement.textContent = `Wartość zamówienia wyniosła: ${totalPrice} zł. Proszę uregulować należność przy odbiorze książek z biblioteki`;
 
                 // Clear the cart after rendering checkout page
                 localStorage.removeItem('cart');
