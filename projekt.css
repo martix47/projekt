@@ -572,7 +572,7 @@ body {
     font-size: 24px;
 }
 
-.orderConfirmation button {
+#btncart {
     margin: 20px; 
     padding: 10px 20px; 
     font-size: 18px; 
