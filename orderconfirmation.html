@@ -1,9 +1,72 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Potwierdzenie zamówienia</title>
+        <title>Checkout</title>
+        <link rel="icon" href="images/favicon.ico">
+        <link rel="stylesheet" href="projekt.css">
+        <script src="lverify.js"></script>
     </head>
-    <body>
 
+    <body>
+        <header>
+            <nav>
+                <ul>
+                    <li>
+                        <a href="index.html">Biblioteka</a>
+                    </li>
+                    <li>
+                        <a href="catalog.html">Katalog</a>
+                    </li>
+                    <li>
+                        <a href="cart.html">Koszyk</a>
+                    </li>
+                    <li>
+                        <a href="aboutUs.html">O nas</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+
+        <section id="checkout">
+            <h3>Twoje Wypożyczone Książki</h3>
+            <p>Dziękujemy za wypożyczenie książek!</p>
+
+            <table id="checkoutTable">
+                <thead>
+                    <tr>
+                        <th>Tytuł Książki</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                </tbody>
+            </table>
+        </section>
+
+        <script>
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const checkoutTableBody = document.querySelector('#checkoutTable tbody');
+
+            function renderCheckout() {
+                checkoutTableBody.innerHTML = '';
+
+                cart.forEach((item) => {
+                    const row = document.createElement('tr');
+                    row.innerHTML = `
+                        <td>${item.title}</td>
+                    `;
+                    checkoutTableBody.appendChild(row);
+                });
+
+                // Clear the cart after rendering checkout page
+                localStorage.removeItem('cart');
+            }
+
+            renderCheckout();
+        </script>
+
+        <footer>
+            @ MA & IZ KTI
+        </footer>
     </body>
 </html>
