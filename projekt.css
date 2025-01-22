@@ -588,7 +588,6 @@ body {
   /* Główny kontener slajdera */
   .slider-container {
     position: relative;
-    width: 600px;
     height: 300px;
     overflow: hidden;
     background: #ddd;

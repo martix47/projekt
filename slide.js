@@ -34,5 +34,5 @@ document.addEventListener("DOMContentLoaded", () => {
     // Opcjonalnie: automatyczne przełączanie slajdów co 3 sekundy
     setInterval(() => {
       nextBtn.click();
-    }, 3000);
+    }, 6000);
   });
