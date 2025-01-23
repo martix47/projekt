@@ -557,7 +557,7 @@ body {
 }
 
 #sidePanel.open {
-    right: 0; /* Panel widoczny */
+    right: 0; 
 }
 
 #toggleButton {
