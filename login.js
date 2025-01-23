@@ -1,10 +1,13 @@
 // logowanie
-console.log("Plik login.js został załadowany!");
+
 const validUsername = "admin";
 const validPassword = "password123";
 
 const loginForm = document.getElementById('loginForm');
 const errorMessage = document.getElementById('errorMessage');
+
+
+localStorage.removeItem('loggedIn');
 
 loginForm.addEventListener('submit', function(event) {
     event.preventDefault(); //  przeładowanie
