@@ -556,9 +556,7 @@ body {
 }
 
 
-#toggleAside:checked ~ #sidePanel {
-    transform: translateX(0);
-}
+
 
 
 #toggleButton {
