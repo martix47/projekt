@@ -7,7 +7,7 @@ const loginForm = document.getElementById('loginForm');
 const errorMessage = document.getElementById('errorMessage');
 
 
-localStorage.removeItem('loggedIn');
+
 
 loginForm.addEventListener('submit', function(event) {
     event.preventDefault(); //  przeładowanie
@@ -16,23 +16,11 @@ loginForm.addEventListener('submit', function(event) {
     const password = document.getElementById('password').value;
 
     if (username === validUsername && password === validPassword) {
+        sessionStorage.setItem('loggedIn', true);
         
-        localStorage.setItem('loggedIn', true);
-    
-    //Zapamiętaj mnie
-    const rememberMe = document.getElementById('rememberMe');
-
-    if (rememberMe.checked) {
-        localStorage.setItem('username', username);
+        window.location.href = "index.html";
     } else {
-        localStorage.removeItem('username');
-    }     
-
-    console.log("Zalogowano! Przekierowanie na index.html");
-    window.location.href = "index.html";
-    } else {
-    
-    errorMessage.style.display = "block";
-    console.log("Błąd logowania: nieprawidłowe dane");
-}
+        errorMessage.style.display = "block"; 
+        
+    }
 });
