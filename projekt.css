@@ -278,7 +278,8 @@ body {
   
   /* Pola tekstowe */
   form input[type="text"],
-  form input[type="password"] {
+  form input[type="password"]{
+    font-family: 'Times New Roman', Times, serif;
       padding: 10px;
       font-size: 20px;
       border: 1px solid #ddd;
@@ -486,6 +487,7 @@ body {
       margin-bottom: 5px;
       font-weight: bold;
       font-size: 14px;
+      font-family: 'Times New Roman', Times, serif;
   }
   
   .form-container input,
@@ -497,11 +499,13 @@ body {
       border-radius: 5px;
       font-size: 14px;
       box-sizing: border-box;
+      font-family: 'Times New Roman', Times, serif;
   }
   /* radio buttony */
   .form-container label[for="rating"] {
       display: block; 
       margin-bottom: 10px; 
+      font-size: 16px;
   }
   
   .form-container label {
@@ -513,7 +517,7 @@ body {
   
   .form-container input[type="radio"] {
       margin: 0; 
-      display: inline-block; 
+      
   }
   .form-container button {
       padding: 10px 20px;
@@ -524,6 +528,7 @@ body {
       font-size: 16px;
       cursor: pointer;
       transition: background-color 0.3s ease;
+      font-family: 'Times New Roman', Times, serif;
   }
   
   .form-container button:hover {
