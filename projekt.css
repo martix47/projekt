@@ -278,7 +278,8 @@ body {
   
   /* Pola tekstowe */
   form input[type="text"],
-  form input[type="password"]{
+  form input[type="password"]
+  form input[type="name"]{
     font-family: 'Times New Roman', Times, serif;
       padding: 10px;
       font-size: 20px;
