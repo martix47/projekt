@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Checkout</title>
+        <link rel="icon" href="images/favicon.ico">
+        <link rel="stylesheet" href="projekt.css">
+        <script src="lverify.js"></script>
+    </head>
+
+    <body>
+        <header>
+            <nav>
+                <ul>
+                    <li>
+                        <a href="index.html">Biblioteka</a>
+                    </li>
+                    <li>
+                        <a href="catalog.html">Katalog</a>
+                    </li>
+                    <li>
+                        <a href="cart.html">Koszyk</a>
+                    </li>
+                    <li>
+                        <a href="aboutUs.html">O nas</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+
+        <section id="checkout">
+            <h3 id="h3order">Twoje Wypożyczone Książki</h3>
+            <p>Dziękujemy za wypożyczenie książek!</p>
+
+            <table id="checkoutTable">
+                <thead>
+                    <tr>
+                        <th>Tytuł Książki</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                </tbody>
+            </table>
+
+            <p id="orderTotal"></p>
+        </section>
+
+        <script>
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const checkoutTableBody = document.querySelector('#checkoutTable tbody');
+            const orderTotalElement = document.getElementById('orderTotal');
+            const handlingFeePerBook = 1;
+
+            function renderCheckout() {
+                checkoutTableBody.innerHTML = '';
+                let totalPrice = 0;
+
+                cart.forEach((item) => {
+                    const row = document.createElement('tr');
+                    row.innerHTML = `
+                        <td>${item.title}</td>
+                    `;
+                    checkoutTableBody.appendChild(row);
+                    totalPrice += 1 + handlingFeePerBook;; // Cena każdej książki to 1 zł
+                });
+
+                orderTotalElement.textContent = `Wartość zamówienia wyniosła: ${totalPrice} zł. Proszę uregulować należność przy odbiorze książek z biblioteki`;
+
+                // Oczyszczanie koszyka po wejsciu na strone potwierdzenie zamowienia
+                localStorage.removeItem('cart');
+            }
+
+            renderCheckout();
+        </script>
+
+        <footer>
+            @ MA & IZ KTI
+        </footer>
+    </body>
+</html>
