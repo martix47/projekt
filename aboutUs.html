@@ -93,16 +93,33 @@
                 </address>
             </section>
             <div class="form-container">
-                <h2>Formularz Oceny Biblioteki</h2>
-                <form>
-               
+                <div class="rating-section">
+                    <h2>Formularz oceny biblioteki</h2>
                     <label for="rating">Oceń bibliotekę:</label>
-                    <label><input type="radio" name="rating" value="1" required> 1</label>
-                    <label><input type="radio" name="rating" value="2"> 2</label>
-                    <label><input type="radio" name="rating" value="3"> 3</label>
-                    <label><input type="radio" name="rating" value="4"> 4</label>
-                    <label><input type="radio" name="rating" value="5"> 5</label> <br>
-        
+                    <div class="rating-options">
+                        <label>
+                            <span>1</span>
+                            <input type="radio" name="rating" value="1">
+                        </label>
+                        <label>
+                            <span>2</span>
+                            <input type="radio" name="rating" value="2">
+                        </label>
+                        <label>
+                            <span>3</span>
+                            <input type="radio" name="rating" value="3">
+                        </label>
+                        <label>
+                            <span>4</span>
+                            <input type="radio" name="rating" value="4">
+                        </label>
+                        <label>
+                            <span>5</span>
+                            <input type="radio" name="rating" value="5">
+                        </label>
+                    </div>
+                </div>
+
                     <label for="comments">Uwagi i sugestie:</label>
                     <textarea id="comments" name="comments" rows="5" placeholder="Napisz swoje uwagi lub sugestie..." required></textarea>
         

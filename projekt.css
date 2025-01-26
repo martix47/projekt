@@ -509,11 +509,35 @@ body {
   }
   /* radio buttony */
   .form-container label[for="rating"] {
-      display: block; 
-      margin-bottom: 10px; 
-      font-size: 16px;
-  }
-  
+    display: block; 
+    margin-bottom: 10px; 
+    font-size: 16px;
+    font-weight: bold;
+    color: #6e072d;
+}
+
+/* Sekcja ocen */
+.form-container .rating-section {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+/* Grupa radio buttonów */
+.form-container .rating-options {
+    display: flex;
+    gap: 15px; 
+    align-items: center; 
+}
+
+/* Styl dla każdej grupy oceny (cyfra + radio button) */
+.form-container .rating-options label {
+    display: flex;
+    align-items: center; 
+    gap: 5px; 
+}
   .form-container label {
       display: inline-flex; 
       align-items: center; 
